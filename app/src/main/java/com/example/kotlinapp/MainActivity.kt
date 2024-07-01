@@ -16,32 +16,25 @@ import com.example.kotlinapp.ui.theme.KotlinappTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
         enableEdgeToEdge()
         setContent {
             KotlinappTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            variablesConstants()
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+private fun variablesConstants() {
+    var nomAlumne = "Pau Guerrero"
+    println(nomAlumne)
+    // Comentari d'una línia
+    /* Comentari de iverses
+    línies
+     */
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KotlinappTheme {
-        Greeting("Android")
-    }
+    var edat = 23
+    // edat = "Ramon" No és pot modificar el tipus
+    println(edat)
 }
